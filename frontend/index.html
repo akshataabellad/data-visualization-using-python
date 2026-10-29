@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovereign Health & Capital Analytics</title>
+  <!-- Institutional Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation & Institutional Telemetry -->
+  <header class="top-header">
+    <div class="brand-section">
+      <div class="brand-mark">SH</div>
+      <div class="brand-titles">
+        <h1 class="brand-title">
+          SOVEREIGN HEALTH & CAPITAL ANALYTICS
+          <span class="badge badge-resilience" style="font-size:9px;height:17px;">TERMINAL v2.5</span>
+        </h1>
+        <span class="brand-sub">MINISTERIAL POLICY & CAPITAL ALLOCATION TELEMETRY | DATABAZAAR HEALTHCARE PANEL</span>
+      </div>
+    </div>
+
+    <div class="top-telemetry">
+      <div class="telemetry-node">
+        <span class="pulse-dot"></span>
+        <span id="total-countries-badge">226 SOVEREIGN NATIONS</span>
+      </div>
+      <div class="telemetry-node">
+        <span id="total-records-badge">10,170 RECORDS (1980–2024)</span>
+      </div>
+
+      <!-- Theme Switcher (Light / Dark) -->
+      <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light / Dark Mode">
+        <span id="theme-icon">☀️</span> <span id="theme-text">LIGHT</span>
+      </button>
+
+      <!-- Currency Switcher -->
+      <div class="segmented-control">
+        <button class="segmented-btn currency-toggle-btn active" data-curr="USD">USD ($)</button>
+        <button class="segmented-btn currency-toggle-btn" data-curr="INR">INR (₹)</button>
+      </div>
+
+      <!-- Export Shortcut -->
+      <button class="btn-secondary" id="btn-export-csv" title="Download Full Dataset">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        EXPORT CSV
+      </button>
+    </div>
+  </header>
+
+  <!-- Filter & Parameter Command Ribbon -->
+  <div class="control-ribbon">
+    <div class="filter-group">
+      <!-- Sovereign Entity Selector -->
+      <div class="control-item">
+        <span class="control-label">SOVEREIGN ENTITY:</span>
+        <select class="select-input" id="country-select" style="min-width: 180px;">
+          <option value="ALL">ALL SOVEREIGN NATIONS (GLOBAL)</option>
+        </select>
+      </div>
+
+      <!-- Region Filter -->
+      <div class="control-item">
+        <span class="control-label">WHO REGION:</span>
+        <select class="select-input" id="region-select">
+          <option value="ALL">ALL REGIONS</option>
+        </select>
+      </div>
+
+      <!-- Quick Sovereign Pills -->
+      <div class="quick-pills">
+        <button class="sovereign-pill active" data-iso="ALL">GLOBAL</button>
+        <button class="sovereign-pill" data-iso="IND">IND</button>
+        <button class="sovereign-pill" data-iso="USA">USA</button>
+        <button class="sovereign-pill" data-iso="DEU">DEU</button>
+        <button class="sovereign-pill" data-iso="JPN">JPN</button>
+        <button class="sovereign-pill" data-iso="CHN">CHN</button>
+        <button class="sovereign-pill" data-iso="GBR">GBR</button>
+        <button class="sovereign-pill" data-iso="BRA">BRA</button>
+        <button class="sovereign-pill" data-iso="ZAF">ZAF</button>
+      </div>
+    </div>
+
+    <!-- Timeline Scrubber & Year Control -->
+    <div class="timeline-scrubber">
+      <button class="play-toggle" id="play-btn" title="Toggle Timeline Auto-Play">▶</button>
+      <span class="control-label">FISCAL HORIZON:</span>
+      <input type="range" class="year-slider" id="year-slider" min="1980" max="2024" step="1" value="2024">
+      <span class="year-display-badge" id="year-display">2024</span>
+    </div>
+  </div>
+
+  <!-- Main Institutional Viewport -->
+  <main class="main-viewport">
+    
+    <!-- Row 1: High-Density Macro Metric Cards (Compact & Crisp) -->
+    <section class="macro-metrics-row" id="macro-metrics-row">
+      <!-- Injected via JavaScript -->
+    </section>
+
+    <!-- Row 2: Rearranged Hero Graph Observation Bay (Compact, Full-Width & Fully Visible) -->
+    <section class="chart-card">
+      <div class="chart-card-header">
+        <div class="chart-title-group">
+          <span class="chart-heading" id="chart-heading-text">LONGITUDINAL MACRO TRAJECTORY (1980–2024)</span>
+        </div>
+
+        <!-- Reorganized Centered Navigation Tabs -->
+        <div class="chart-tabs">
+          <button class="chart-tab-btn active" data-tab="timeseries">📈 TRAJECTORY (1980–2024)</button>
+          <button class="chart-tab-btn" data-tab="benchmarking">📊 BENCHMARKING</button>
+          <button class="chart-tab-btn" data-tab="correlation">🔵 ROI CORRELATION</button>
+          <button class="chart-tab-btn" data-tab="radar">🕸️ RESILIENCE RADAR</button>
+        </div>
+
+      </div>
+      <!-- Per-tab reactive controls injected by app.js -->
+      <div id="chart-controls-panel" class="chart-controls-panel"></div>
+
+      <div class="chart-body">
+        <div class="chart-legend-row" id="chart-legend-row">
+          <!-- Dynamic Legend Items -->
+        </div>
+        <div class="chart-canvas-container">
+          <canvas id="main-chart-canvas"></canvas>
+          <div id="chart-tooltip" class="floating-tooltip"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Row 3: Secondary Diagnostics Deck (Clean Horizontal Split) -->
+    <section class="diagnostics-deck">
+      <!-- OOPE Distress Diagnostics -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span class="chart-heading">HOUSEHOLD OOPE DISTRESS SPECTRUM</span>
+          <span class="badge badge-deficit">DISTRESS MONITOR</span>
+        </div>
+        <div class="chart-body" style="padding-top:10px;padding-bottom:12px;" id="distress-telemetry-body">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+      <!-- Institutional Policy Memorandum -->
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span class="chart-heading">SOVEREIGN HEALTH CAPITAL DIRECTIVE</span>
+          <span class="badge badge-gdp">POLICY MEMORANDUM</span>
+        </div>
+        <div class="chart-body" style="font-size:11.5px;color:var(--text-secondary);display:flex;flex-direction:column;gap:6px;padding-top:10px;padding-bottom:12px;">
+          <p style="color:var(--text-primary);line-height:1.45;">
+            <strong style="color:var(--accent-resilience)">Demographic Dividend & Capital Yield:</strong>
+            Empirical correlation reveals a <span style="color:#16a34a;font-family:var(--font-mono);font-weight:700;">+0.82 Pearson r</span> between Universal Health Coverage (UHC) Index expansion and multi-factor labor productivity.
+          </p>
+          <p style="line-height:1.45;">
+            <strong style="color:var(--accent-deficit)">Catastrophic OOPE Threshold:</strong>
+            Out-of-Pocket Expenditure exceeding <span style="font-family:var(--font-mono);color:var(--accent-deficit);font-weight:700;">35% of total outlay</span> triggers household asset liquidation.
+          </p>
+          <div style="background:var(--interactive-hover);padding:5px 10px;border:1px solid var(--rim-subtle);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:space-between;font-family:var(--font-mono);font-size:10.5px;">
+            <span>MINISTERIAL GVA MULTIPLIER:</span>
+            <span style="color:var(--accent-resilience);font-weight:700;">2.4x / ₹1 Cr Outlay</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Row 4: Tabular Analytical Data Grid -->
+    <section class="table-card">
+      <div class="table-controls">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <input type="text" class="text-input" id="table-search-input" placeholder="Search Country or ISO..." style="width:200px;">
+          <select class="select-input" id="table-region-filter">
+            <option value="ALL">All Regions</option>
+          </select>
+          <select class="select-input" id="table-income-filter">
+            <option value="ALL">All Income Groups</option>
+          </select>
+          <button class="btn-secondary" id="btn-clear-filters" type="button">CLEAR FILTERS</button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button class="btn-secondary" id="btn-table-export">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            DOWNLOAD VIEW (CSV)
+          </button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th data-col="country">Country ⬍</th>
+              <th data-col="iso_code">ISO ⬍</th>
+              <th data-col="region">Region ⬍</th>
+              <th data-col="income_group">Income Tier ⬍</th>
+              <th data-col="health_resilience_score" class="numeric-col">Resilience Index ⬍</th>
+              <th data-col="life_expectancy_years" class="numeric-col">Life Exp. ⬍</th>
+              <th data-col="health_expenditure_pct_gdp" class="numeric-col">Exp. (% GDP) ⬍</th>
+              <th data-col="health_expenditure_per_capita_usd" class="numeric-col">Per Capita Outlay ⬍</th>
+              <th data-col="out_of_pocket_expenditure_pct" class="numeric-col">OOPE (%) ⬍</th>
+              <th data-col="physicians_per_1000" class="numeric-col">Phys / 1k ⬍</th>
+              <th data-col="hospital_beds_per_1000" class="numeric-col">Beds / 1k ⬍</th>
+              <th data-col="infant_mortality_per_1000" class="numeric-col">Infant Mort. ⬍</th>
+              <th data-col="uhc_service_coverage_index" class="numeric-col">UHC Index ⬍</th>
+            </tr>
+          </thead>
+          <tbody id="table-records-body">
+            <!-- Injected via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span id="table-page-info">Loading records...</span>
+        <div class="pagination-group">
+          <button class="page-btn" id="btn-prev-page">← PREV</button>
+          <button class="page-btn" id="btn-next-page">NEXT →</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script initialization -->
+  <script src="app.js"></script>
+</body>
+</html>

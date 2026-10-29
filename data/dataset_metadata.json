@@ -1,0 +1,42 @@
+{
+  "title": "Healthcare Infrastructure & Disease Burden",
+  "description": "Multi-decadal panel dataset covering sovereign countries from 1980 to 2024 with 28 health system indicators synthesized from WHO, World Bank, UNICEF, and UN Population Division.",
+  "record_count": 10170,
+  "country_count": 226,
+  "year_min": 1980,
+  "year_max": 2024,
+  "columns": [
+    "iso_code",
+    "country",
+    "region",
+    "year",
+    "life_expectancy_years",
+    "infant_mortality_per_1000",
+    "under5_mortality_per_1000",
+    "maternal_mortality_per_100k",
+    "physicians_per_1000",
+    "nurses_per_1000",
+    "hospital_beds_per_1000",
+    "health_expenditure_pct_gdp",
+    "health_expenditure_per_capita_usd",
+    "out_of_pocket_expenditure_pct",
+    "dpt_immunization_pct",
+    "measles_immunization_pct",
+    "hiv_prevalence_pct",
+    "tb_incidence_per_100k",
+    "ncd_mortality_pct_30_70",
+    "uhc_service_coverage_index",
+    "birth_rate_per_1000",
+    "death_rate_per_1000",
+    "clean_water_access_pct",
+    "sanitation_access_pct",
+    "obesity_prevalence_pct",
+    "diabetes_prevalence_pct",
+    "tobacco_use_pct",
+    "alcohol_consumption_liters_pc"
+  ],
+  "composite_metrics": [
+    "health_resilience_score",
+    "oope_distress_alert"
+  ]
+}
